@@ -1,0 +1,6 @@
+{
+    "*.{ts,tsx}": [
+      "yarn prettier:check",
+      "yarn lint:ts:check"
+    ]
+}

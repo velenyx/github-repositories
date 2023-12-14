@@ -11,7 +11,8 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "prettier:check": "prettier --check \"**/*.{js,ts,tsx,css,mdx}\"",
     "prettier:fix": "prettier --write \"**/*.{js,ts,tsx,css,mdx}\"",
-    "generate-gql": "graphql-codegen -r dotenv/config --config ./app/_src/graphql/codegen.yml && prettier --write ./app/_src/graphql/__generated__.ts"
+    "generate-gql": "graphql-codegen -r dotenv/config --config ./app/_src/graphql/codegen.yml && prettier --write ./app/_src/graphql/__generated__.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@apollo/client": "^3.8.8",
@@ -34,6 +35,8 @@
     "dotenv": "^16.3.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
     "postcss": "^8.4.32",
     "postcss-preset-mantine": "^1.11.1",
     "postcss-simple-vars": "^7.0.1",
