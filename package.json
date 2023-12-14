@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:ts:check": "npx eslint \"**/*.{ts,tsx}\"",
+    "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
+    "prettier:check": "prettier --check \"**/*.{js,ts,tsx,css,mdx}\"",
+    "prettier:fix": "prettier --write \"**/*.{js,ts,tsx,css,mdx}\""
   },
   "dependencies": {
     "@mantine/core": "^7.3.2",
@@ -24,6 +28,7 @@
     "postcss": "^8.4.32",
     "postcss-preset-mantine": "^1.11.1",
     "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.1.1",
     "typescript": "^5"
   },
   "packageManager": "yarn@4.0.2"
