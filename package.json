@@ -14,6 +14,12 @@
     "generate-gql": "graphql-codegen -r dotenv/config --config ./app/_src/graphql/codegen.yml && prettier --write ./app/_src/graphql/__generated__.ts",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier",
+      "eslint"
+    ]
+  },
   "dependencies": {
     "@apollo/client": "^3.8.8",
     "@mantine/core": "^7.3.2",
