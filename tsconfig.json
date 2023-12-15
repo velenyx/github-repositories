@@ -19,9 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/gql": ["./app/_src/graphql/"],
+      "@/components": ["./app/_src/components"],
+      "@/utils/constants": ["./app/_src/utils/constants"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".eslintrc.js"],
   "exclude": ["node_modules"]
 }
