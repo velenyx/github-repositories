@@ -1,8 +1,12 @@
-import { Button } from '@mantine/core';
+import { Flex, Text, Title } from '@mantine/core';
 
 const Home = () => (
   <main>
-    <Button variant='gradient'>Test Mantine</Button>
+    <Flex align='center' direction='column' justify='center'>
+      <Title order={1}>Find GitHub repositories</Title>
+
+      <Text>Best way to found GitHub repositories in the world!</Text>
+    </Flex>
   </main>
 );
 
