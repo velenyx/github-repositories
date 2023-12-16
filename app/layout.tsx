@@ -1,11 +1,12 @@
-import { ColorSchemeScript, Container, Flex, Title } from '@mantine/core';
+import { ColorSchemeScript, Container } from '@mantine/core';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '@mantine/core/styles.css';
-import '@/app/_src/styles/global.css';
-import { Provider } from '@/app/provider';
-import { SearchBox } from '@/components';
+import '@/styles/global.css';
+import { Header } from '@/components/header';
+
+import { Provider } from './provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,13 +15,6 @@ export const metadata: Metadata = {
   description: 'Github Repositories',
 };
 
-const Header = () => (
-  <Flex justify='space-between'>
-    <Title>⭐ Github Repositories</Title>
-    <SearchBox />
-  </Flex>
-);
-
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang='en'>
     <head>
@@ -28,8 +22,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
     </head>
     <body className={inter.className}>
       <Provider>
-        <Container fluid size='md'>
-          <Header />
+        <Header />
+        <Container fluid pt='md' size='md'>
           {children}
         </Container>
       </Provider>

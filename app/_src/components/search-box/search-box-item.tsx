@@ -24,7 +24,7 @@ export const SearchBoxItem: React.FC<SearchBoxItemProps> = ({
       <Box>
         <Text>{login}</Text>
         {name && (
-          <Text color='dimmed' size='xs'>
+          <Text c='dimmed' size='xs'>
             {name} {status && <Box>{status.message}</Box>}
           </Text>
         )}

@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["./app/_src/*"],
       "@/gql": ["./app/_src/graphql/"],
       "@/components": ["./app/_src/components"],
       "@/utils/constants": ["./app/_src/utils/constants"]

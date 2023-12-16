@@ -2,17 +2,20 @@
 
 import { Combobox, Loader, TextInput, useCombobox } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { SearchBoxItem } from '@/app/_src/components/search-box/search-box-item';
 import { SearchType, useSearchQuery } from '@/gql';
+import { CLIENT_PATHS } from '@/shared/constants';
+
+import { SearchBoxItem } from './search-box-item';
 
 export const SearchBox = () => {
+  const router = useRouter();
+  const [value, setValue] = useState('');
   const combobox = useCombobox({
     onDropdownClose: () => combobox.resetSelectedOption(),
   });
-
-  const [value, setValue] = useState('');
 
   const searchQuery = useSearchQuery({
     variables: {
@@ -41,6 +44,7 @@ export const SearchBox = () => {
       withinPortal={false}
       onOptionSubmit={optionValue => {
         setValue(optionValue);
+        router.push(CLIENT_PATHS.PROFILE(optionValue));
         combobox.closeDropdown();
       }}
     >
@@ -64,7 +68,7 @@ export const SearchBox = () => {
         />
       </Combobox.Target>
 
-      <Combobox.Dropdown>
+      <Combobox.Dropdown hidden={searchQuery.loading}>
         <Combobox.Options>
           {options}
           {searchQuery.data?.search.edges?.length === 0 && (
